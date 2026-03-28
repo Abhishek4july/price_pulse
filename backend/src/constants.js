@@ -1,1 +1,0 @@
-export const DB_NAME="price_pulse"

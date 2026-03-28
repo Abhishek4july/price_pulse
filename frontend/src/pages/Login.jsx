@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const API = 'http://localhost:5000/api';
 
 const Login = () => {
+
+  const navigate = useNavigate();
   const [currentTab, setCurrentTab] = useState('login');
   
   // Form State
@@ -115,7 +119,7 @@ const Login = () => {
         msg: 'Login successful. Redirecting to your dashboard...'
       });
       
-      setTimeout(() => { window.location.href = '/home.html'; }, 1500);
+      setTimeout(() => { navigate("/dashboard"); }, 1500);
 
     } catch (err) {
       setAlert({ type: 'error', msg: 'Cannot connect to server. Please check your connection.' });
@@ -174,7 +178,7 @@ const Login = () => {
         msg: 'Your account has been created. Setting up your dashboard...'
       });
 
-      setTimeout(() => { window.location.href = '/home.html'; }, 1500);
+      setTimeout(() => { navigate("/dashboard") }, 1500);
 
     } catch (err) {
       setAlert({ type: 'error', msg: 'Cannot connect to server. Please check your connection.' });
