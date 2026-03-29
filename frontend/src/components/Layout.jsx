@@ -26,14 +26,14 @@ export default function Layout() {
   const navItems = [
     { section: 'Main' },
     { name: 'Dashboard', path: '/dashboard', icon: '📊' },
-    { name: 'Track Products', path: '/track', icon: '📦' },
-    { name: 'Compare Products', path: '/compare', icon: '⚖️' },
-    { section: 'Analytics' },
-    { name: 'Price History', path: '/track', icon: '📈' },
-    { name: 'Demand Model', path: '#', icon: '🎯' },
-    { name: 'Alerts', path: '#', icon: '⚠️' },
-    { section: 'Settings' },
-    { name: 'Settings', path: '#', icon: '⚙️' },
+    { name: 'Products', path: '/products', icon: '📦' },
+    // { name: 'Compare Products', path: '/compare', icon: '⚖️' },
+    // { section: 'Analytics' },
+    // { name: 'Price History', path: '/track', icon: '📈' },
+    // { name: 'Demand Model', path: '#', icon: '🎯' },
+    // { name: 'Alerts', path: '#', icon: '⚠️' },
+    // { section: 'Settings' },
+    // { name: 'Settings', path: '#', icon: '⚙️' },
   ];
 
   return (
@@ -77,7 +77,6 @@ export default function Layout() {
             </div>
             <div className="overflow-hidden">
               <div className="text-[12px] font-bold text-[#dff0ea] whitespace-nowrap overflow-hidden text-ellipsis max-w-[110px]">{user?.name}</div>
-              <div className="font-['Space_Mono',monospace] text-[9px] text-[#4a7060] uppercase tracking-[1px]">{user?.role}</div>
             </div>
             <button onClick={handleLogout} className="ml-auto bg-transparent border-none text-[#4a7060] cursor-pointer text-[16px] p-1 transition-colors hover:text-[#ff5e5e] shrink-0" title="Logout">⏻</button>
           </div>

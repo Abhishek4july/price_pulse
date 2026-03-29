@@ -142,7 +142,7 @@ export default function Dashboard() {
             <div className="w-1.5 h-1.5 bg-[#00ffb4] rounded-full animate-blink"></div>
             Live Tracking
           </div>
-          <button onClick={() => navigate('/track?addProduct=1')} className="flex items-center gap-1.5 px-4 py-2 bg-[#00ffb4] text-[#050a0e] border-none rounded-lg font-['Syne',sans-serif] text-[12px] font-bold cursor-pointer transition-transform hover:bg-[#00e6a2] hover:-translate-y-[1px]">
+          <button onClick={() => navigate('/add-product')} className="flex items-center gap-1.5 px-4 py-2 bg-[#00ffb4] text-[#050a0e] border-none rounded-lg font-['Syne',sans-serif] text-[12px] font-bold cursor-pointer transition-transform hover:bg-[#00e6a2] hover:-translate-y-[1px]">
             + Add Product
           </button>
         </div>

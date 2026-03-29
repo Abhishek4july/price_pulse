@@ -6,7 +6,6 @@ export const createProduct = async (req, res) => {
   try {
     const {name, category, basePrice} = req.body;
     const product = await Product.create({name, category, basePrice});
-    console.log(product)
     res.json(product);
   } catch (err) {
     res.status(500).json({ error: err.message });
