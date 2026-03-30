@@ -5,7 +5,6 @@ import User from "../models/User.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "secret123";
 
-// 🔐 helper function
 const generateToken = (user) => {
   return jwt.sign(
     { id: user._id, email: user.email },
@@ -14,7 +13,7 @@ const generateToken = (user) => {
   );
 };
 
-// ✅ Signup
+// SignUp : /api/auth/signup
 export const signup = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -52,7 +51,7 @@ export const signup = async (req, res) => {
 };
 
 
-// ✅ Login
+// Login : /api/auth/login
 export const login = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -93,14 +92,14 @@ export const login = async (req, res) => {
 };
 
 
-// ✅ Logout (with cookie)
+// Logout : /api/auth/logout
 export const logout = (req, res) => {
   res.clearCookie("token");
   res.json({ success: true, message: "Logged out" });
 };
 
 
-// ✅ getMe (keep your version — already good 👍)
+// userInfo : /api/auth/me
 export const getMe = async (req, res) => {
   const user = await User.findById(req.user.id);
   res.json({ success: true, user });

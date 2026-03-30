@@ -4,7 +4,6 @@ import { protect } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
-// Auth routes
 router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", protect, logout);

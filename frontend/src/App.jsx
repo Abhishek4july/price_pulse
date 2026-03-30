@@ -3,8 +3,8 @@ import Login from './pages/Login';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import AddProduct from './pages/AddProduct';
-// import Product from './pages/Products';
-// import ProductAnalytics from './pages/ProductAnalytics';
+import Product from './pages/Products';
+import ProductAnalytics from './pages/ProductAnalytics';
 
 const App = () => {
   return (
@@ -13,8 +13,8 @@ const App = () => {
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-product" element={<AddProduct />} />
-          {/* <Route path="/products" element={<Product />} /> */}
-          {/* <Route path="/product/:productId" element={<ProductAnalytics />} /> */}
+          <Route path="/products" element={<Product />} />
+          <Route path="/product/:productId" element={<ProductAnalytics />} />
         </Route>
       </Routes>
   );

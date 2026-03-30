@@ -2,6 +2,7 @@ import CompetitorPrice from '../models/CompetitorPrice.js';
 import PriceHistory from '../models/PriceHistory.js';
 import Product from '../models/Product.js';
 
+// Create Product : /api/products
 export const createProduct = async (req, res) => {
   try {
     const {name, category, basePrice} = req.body;
@@ -12,11 +13,13 @@ export const createProduct = async (req, res) => {
   }
 };
 
+// Get Products : /api/products
 export const getProducts = async (req, res) => {
   const products = await Product.find();
   res.json(products);
 };
 
+// Add Previous Prices : /api/products/history
 export const addPriceHistory = async (req, res) => {
   try {
     const { productId, price } = req.body;
@@ -27,6 +30,7 @@ export const addPriceHistory = async (req, res) => {
   }
 };
 
+// Add Competitor Prices : /api/products/competitor
 export const addCompetitorPrice = async (req, res) => {
   try {
     const { productId, competitorName, price } = req.body;
